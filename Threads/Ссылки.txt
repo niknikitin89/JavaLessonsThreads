@@ -1,0 +1,7 @@
+https://struchkov.dev/blog/ru/threads-in-java-thread-and-runnable/
+
+https://habr.com/ru/articles/776914/
+
+https://javarush.com/groups/posts/2047-threadom-java-ne-isportishjh--chastjh-i---potoki
+
+https://habr.com/ru/articles/164487/
