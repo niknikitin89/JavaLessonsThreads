@@ -24,7 +24,7 @@ public class ManyThreads {
 
 class MyThread implements Runnable {
     //Ссылка на объект потока
-    private Thread thread;
+    public Thread thread;
 
     MyThread(String name) {
         //инициализация потока
