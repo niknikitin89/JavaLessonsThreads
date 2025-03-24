@@ -28,7 +28,7 @@ public class WaitingThread {
             lock.notify();
             System.out.println("MainThread notify child");
         }
-
-
     }
 }
+
+
