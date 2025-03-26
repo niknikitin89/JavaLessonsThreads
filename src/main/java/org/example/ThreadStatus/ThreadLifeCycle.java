@@ -34,26 +34,28 @@ public class ThreadLifeCycle {
             throw new RuntimeException(e);
         }
     }
+
+    static class MyThread extends Thread {
+        private boolean timeToSleep = false;
+
+        public void setTimeToSleep(boolean timeToSleep) {
+            this.timeToSleep = timeToSleep;
+        }
+
+        @Override
+        public void run() {
+            System.out.println("Мы находимся в методе 'run'.");
+            while (!timeToSleep) {
+                ;
+            }
+            try {
+                sleep(500);// Переход потока в TIMED_WAITING
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
 }
 
-class MyThread extends Thread {
-    private boolean timeToSleep = false;
 
-    public void setTimeToSleep(boolean timeToSleep) {
-        this.timeToSleep = timeToSleep;
-    }
-
-    @Override
-    public void run() {
-        System.out.println("Мы находимся в методе 'run'.");
-        while (!timeToSleep) {
-            ;
-        }
-        try {
-            sleep(500);// Переход потока в TIMED_WAITING
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-    }
-}
 

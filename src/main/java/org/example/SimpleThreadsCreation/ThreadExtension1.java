@@ -14,19 +14,20 @@ public class ThreadExtension1 {
         }
 
     }
-}
 
-class MyThread extends Thread {
-    @Override
-    public void run() {
-        try {
-            sleep(500);
-            System.out.println("....Work hard!");
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+    static class MyThread extends Thread {
+        @Override
+        public void run() {
+            try {
+                sleep(500);
+                System.out.println("....Work hard!");
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }
+
 
 
 

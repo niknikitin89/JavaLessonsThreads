@@ -17,26 +17,27 @@ public class LockMethod {
         System.out.println(
                 thread1.getName() + " status - " + thread1.getState());
     }
-}
 
-class Task implements Runnable {
-    @Override
-    public void run() {
-        synchMethod();
-    }
+    static class Task implements Runnable {
+        @Override
+        public void run() {
+            synchMethod();
+        }
 
-    synchronized void synchMethod() {
-        try {
-            String name = Thread.currentThread().getName();
-            System.out.println("Thread "+ name + " started");
-            for (int i = 0; i < 5; i++) {
-                System.out.println(name + " " + i);
-                sleep(500);
+        synchronized void synchMethod() {
+            try {
+                String name = Thread.currentThread().getName();
+                System.out.println("Thread " + name + " started");
+                for (int i = 0; i < 5; i++) {
+                    System.out.println(name + " " + i);
+                    sleep(500);
+                }
+
+                System.out.println("Thread " + name + " finished");
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
-
-            System.out.println("Thread "+ name + " finished");
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
         }
     }
 }
+

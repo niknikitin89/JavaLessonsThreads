@@ -17,19 +17,21 @@ public class RunnableImplementation1 {
             throw new RuntimeException(e);
         }
     }
-}
 
-class MyRunnable implements Runnable {
-    public void run() {
-        try {
-            for (int i = 0; i < 10; i++) {
-                System.out.println("... " + i);
-                sleep(100);
+    static class MyRunnable implements Runnable {
+        public void run() {
+            try {
+                for (int i = 0; i < 10; i++) {
+                    System.out.println("... " + i);
+                    sleep(100);
+                }
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
         }
     }
 }
+
+
 
 
