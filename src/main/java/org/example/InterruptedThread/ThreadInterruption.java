@@ -7,6 +7,7 @@ public class ThreadInterruption {
         Runnable task = () -> {
             while (!Thread.currentThread().isInterrupted()) {
             }
+            System.out.println("Interrupted");
             System.out.println("Finished");
         };
         Thread thread = new Thread(task);
