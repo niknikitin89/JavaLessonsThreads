@@ -24,5 +24,9 @@ public class SimpleSynchronization {
         Thread thread2 = new Thread(task,"Thread2");
         thread1.start();
         thread2.start();
+
+//        Thread.sleep(500);
+//        System.out.printf(
+//                "State of %s %s%n", thread2.getName(), thread2.getState());
     }
 }

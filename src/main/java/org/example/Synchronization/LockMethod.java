@@ -5,9 +5,9 @@ import static java.lang.Thread.sleep;
 public class LockMethod {
     public static void main(String[] args) throws InterruptedException {
 
-        Runnable task = new Task();
-        Thread thread0 = new Thread(task);
-        Thread thread1 = new Thread(task);
+        Runnable task1 = new Task();
+        Thread thread0 = new Thread(task1);
+        Thread thread1 = new Thread(task1);
         thread0.start();
         thread1.start();
 
